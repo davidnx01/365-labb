@@ -1,0 +1,11 @@
+# len web: index.html + použité obrázky
+/*
+!/.gitignore
+!/README.md
+!/index.html
+!/assets/
+/assets/*
+!/assets/babovka-espresso.webp
+!/assets/chia-puding.webp
+!/assets/latte-art.webp
+!/assets/napis-365-cafe.webp

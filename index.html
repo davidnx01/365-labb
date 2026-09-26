@@ -1,0 +1,562 @@
+<!doctype html><html lang="sk"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>365.labb · kaviareň a coworking, Lazovná 5 — neoficiálny návrh</title>
+<meta name="description" content="365.café a coworkingové komunitné centrum 365.labb na Lazovnej 5 v Banskej Bystrici: káva, miesto na prácu s počítačom, detská hernička, oslavy a podujatia. Neoficiálny návrh webu.">
+<meta name="theme-color" content="#18223D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700&amp;family=JetBrains+Mono:ital,wght@0,400;0,500;0,700&amp;display=swap">
+<style>
+:root{
+  --wall:#ECEBE3;--card:#F7F6F1;--navy:#18223D;--navy-2:#222E4E;--slate:#535A72;
+  --red:#D63A2B;--red-d:#B72C1F;--crema:#D39A57;
+  --on:#ECEBE3;--on-2:#A7AEC2;--on-3:rgba(236,235,227,.2);
+  --line:rgba(24,34,61,.15);--line-n:rgba(236,235,227,.16);
+  --sans:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --W:min(1200px,100% - 64px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--wall);color:var(--navy);font:400 18px/1.55 var(--sans)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;text-wrap:balance}
+p,ul,ol,dl,dd,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+.wrap{width:var(--W);margin-inline:auto}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tag{font:500 12.5px/1.4 var(--mono);letter-spacing:.04em;text-transform:uppercase}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+q{quotes:"„" "“"}
+
+/* notice */
+.note{background:var(--navy);color:var(--on);font:500 14px/1.45 var(--sans);padding:9px 0}
+.note b{font-weight:700}
+.note span{color:var(--on-2)}
+
+/* header */
+.hdr{display:flex;align-items:center;gap:40px;min-height:84px;border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;margin-right:auto}
+.logo b{font:700 30px/1 var(--sans);letter-spacing:-.03em}
+.logo b i{font-style:normal;color:var(--red)}
+.logo span{font:500 12px/1 var(--mono);color:var(--slate);letter-spacing:.02em}
+.menu{display:flex;gap:30px;font:500 16.5px/1 var(--sans)}
+.menu a{text-decoration:none;padding:14px 0;background:linear-gradient(currentColor,currentColor) 0 calc(100% - 9px)/0 1.5px no-repeat;transition:background-size .2s}
+.menu a:hover{background-size:100% 1.5px}
+.hdr__tel{font:500 15px/1 var(--mono);text-decoration:none;padding:14px 0;white-space:nowrap}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;font:600 16.5px/1.1 var(--sans);text-decoration:none;border:1.5px solid transparent;transition:background-color .2s,border-color .2s,color .2s}
+.cta--red{background:var(--red);color:#fff}
+.cta--red:hover{background:var(--red-d)}
+.cta--navy{background:var(--navy);color:var(--on)}
+.cta--navy:hover{background:var(--navy-2)}
+.cta--line{border-color:var(--navy);color:var(--navy)}
+.cta--line:hover{background:var(--navy);color:var(--on)}
+.cta--on{border-color:rgba(236,235,227,.45);color:var(--on)}
+.cta--on:hover{border-color:var(--on)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center;min-height:min(600px,82vh);padding:56px 0 64px}
+.hero .tag{color:var(--slate)}
+.hero h1{font:700 clamp(44px,5.9vw,80px)/.98 var(--sans);letter-spacing:-.035em;margin:22px 0 26px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero__lede{font-size:20.5px;line-height:1.5;max-width:30em}
+.hero__lede small{display:block;margin-top:8px;font:400 13px/1.4 var(--mono);color:var(--slate)}
+.now{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:30px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.now__main{display:flex;align-items:center;gap:12px;font:600 18px/1.3 var(--sans)}
+.now__main b{font-weight:600;color:var(--slate)}
+.now__src{margin-left:auto;font:400 13px/1.4 var(--mono);color:var(--slate)}
+#statusDot{flex:none;width:16px;height:16px;border-radius:50%;background:transparent;box-shadow:inset 0 0 0 2px var(--slate)}
+#statusDot.is-open{background:var(--red);box-shadow:0 0 0 5px rgba(214,58,43,.18)}
+#statusDot.is-closing{background:linear-gradient(90deg,var(--red) 50%,transparent 50%);box-shadow:inset 0 0 0 2px var(--red)}
+#statusDot.is-closed{background:transparent;box-shadow:inset 0 0 0 2px var(--slate)}
+#statusDot.is-note{background:var(--crema)}
+.hero__acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.disc{position:relative;justify-self:end;width:min(100%,440px);margin:0}
+.disc img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%}
+.disc figcaption{position:absolute;right:-6px;bottom:22px;display:flex;align-items:center;gap:10px;background:var(--card);padding:10px 16px 10px 12px;border-radius:999px;font:500 13px/1 var(--mono);box-shadow:0 0 0 1px var(--line)}
+.disc figcaption::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--red)}
+
+/* rok v bodkách — tmavý blok */
+.year{background:var(--navy);color:var(--on);padding:88px 0 92px}
+.year__hd{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:end}
+.year .tag{color:var(--on-2)}
+.year h2{font:700 clamp(38px,4.6vw,62px)/1 var(--sans);letter-spacing:-.03em;margin-top:16px}
+.year h2 b{color:var(--red);font-weight:700}
+.year h2 span{color:var(--on-2);font-weight:500}
+.key{display:grid;grid-template-columns:auto auto;justify-content:end;gap:10px 36px;font:400 13.5px/1.35 var(--mono);color:var(--on-2)}
+.key li{display:flex;align-items:center;gap:10px}
+.key i{flex:none;width:12px;height:12px;border-radius:50%}
+.k-open{background:var(--on)}
+.k-fut{background:var(--on-3)}
+.k-we{box-shadow:inset 0 0 0 1.5px rgba(236,235,227,.5)}
+.k-today{background:var(--red);box-shadow:0 0 0 3px rgba(214,58,43,.3)}
+.k-ev{background:var(--crema);border-radius:2px!important}
+.months{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:40px 44px;margin-top:52px}
+.mo h3{font:500 13px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--on-2);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line-n)}
+.mo ol{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px}
+.mo li{aspect-ratio:1;border-radius:50%;background:var(--on-3)}
+.mo li.we{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(236,235,227,.26)}
+.mo li.past{background:var(--on)}
+.mo li.past.we{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(236,235,227,.6)}
+.mo li.ev{background:var(--crema);border-radius:3px}
+.mo li.today{position:relative;background:var(--red);box-shadow:0 0 0 3px var(--navy),0 0 0 5px var(--red);z-index:1}
+.mo li.today::after{content:"dnes";position:absolute;left:50%;bottom:calc(100% + 9px);transform:translateX(-50%);background:var(--red);color:#fff;font:700 11px/1 var(--mono);padding:4px 6px;border-radius:3px;letter-spacing:.04em}
+.year__ft{display:grid;grid-template-columns:auto auto 1fr;gap:20px 48px;align-items:end;margin-top:52px;padding-top:26px;border-top:1px solid var(--line-n)}
+.cnt b{display:block;font:500 44px/1 var(--mono);letter-spacing:-.02em;color:var(--on)}
+.cnt span{display:block;margin-top:8px;font:400 13px/1.3 var(--mono);color:var(--on-2)}
+.year__note{justify-self:end;max-width:31em;font-size:15.5px;color:var(--on-2)}
+.year__note b{color:var(--on);font-weight:600}
+
+/* priestor */
+.space{padding:104px 0 96px}
+.space__hd{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:end;margin-bottom:48px}
+.space .tag{color:var(--slate)}
+.space h2{font:700 clamp(34px,3.8vw,50px)/1.04 var(--sans);letter-spacing:-.03em;margin-top:14px}
+.space__src{font:400 13.5px/1.5 var(--mono);color:var(--slate);max-width:40em;justify-self:end;text-align:right}
+.modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--navy)}
+.modes li{padding:26px 26px 8px 0}
+.modes li+li{padding-left:26px;border-left:1px solid var(--line)}
+.modes .dot{display:block;width:var(--s);height:var(--s);border-radius:50%;background:var(--navy);margin-bottom:22px}
+.modes li:first-child .dot{background:var(--red)}
+.modes h3{font:700 24px/1.15 var(--sans);letter-spacing:-.015em}
+.modes p{margin-top:10px;font-size:17px;color:var(--slate)}
+.modes p q{color:var(--navy)}
+
+/* káva */
+.cafe{padding:20px 0 110px}
+.cafe__g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.cafe__q{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:48px;align-items:end;padding:44px 0 40px;border-top:1px solid var(--line)}
+.cafe__q .tag{color:var(--slate);margin-bottom:16px;display:block}
+.cafe__q blockquote{font:700 clamp(40px,5.6vw,78px)/.98 var(--sans);letter-spacing:-.04em}
+.cafe__q blockquote q{quotes:"„" "“"}
+.cafe__q p{font:400 13.5px/1.5 var(--mono);color:var(--slate)}
+.ph{margin:0}
+.ph img{width:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.ph .fr{overflow:hidden;border-radius:4px}
+.ph:hover img{transform:scale(1.045)}
+.ph figcaption{display:flex;align-items:center;gap:10px;margin-top:12px;font:400 13px/1.3 var(--mono);color:var(--slate)}
+.ph figcaption::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:currentColor}
+.ph--a{grid-column:1/6;grid-row:2/4}
+.ph--a img{aspect-ratio:3/4}
+.ph--b{grid-column:6/13;grid-row:2}
+.ph--b img{aspect-ratio:16/10;object-position:50% 45%}
+.ph--c{grid-column:6/9;grid-row:3}
+.ph--c img{aspect-ratio:4/5}
+.menu-todo{grid-column:9/13;grid-row:3;align-self:start;background:var(--card);border:1px dashed rgba(24,34,61,.35);border-radius:4px;padding:22px 22px 24px}
+.menu-todo .tag{color:var(--red)}
+.menu-todo h3{font:700 22px/1.2 var(--sans);letter-spacing:-.01em;margin:10px 0 8px}
+.menu-todo p{font-size:16px;color:var(--slate)}
+.menu-todo ul{margin-top:14px;font:400 13.5px/1 var(--mono);color:rgba(24,34,61,.42)}
+.menu-todo li{display:flex;gap:8px;align-items:baseline;padding:9px 0;border-top:1px dotted rgba(24,34,61,.25)}
+.menu-todo li i{flex:1}
+
+/* podujatia */
+.events{background:var(--card);padding:100px 0 104px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.events__g{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:64px;align-items:start}
+.events .tag{color:var(--slate)}
+.events h2{font:700 clamp(34px,3.8vw,50px)/1.04 var(--sans);letter-spacing:-.03em;margin:14px 0 18px}
+.events__lede{color:var(--slate);font-size:17.5px}
+.events__lede q{color:var(--navy)}
+.events__lede small{display:block;margin-top:8px;font:400 13px/1.4 var(--mono)}
+.events__g .cta{margin-top:28px}
+.log li{display:grid;grid-template-columns:150px 22px 1fr;gap:0 18px;padding:22px 0;border-top:1px solid var(--line)}
+.log li:last-child{border-bottom:1px solid var(--line)}
+.log time,.log .when{font:500 13.5px/1.6 var(--mono);color:var(--slate)}
+.log .pt{width:14px;height:14px;margin-top:5px;border-radius:50%;background:var(--navy)}
+.log .pt--ev{background:var(--crema);border-radius:3px}
+.log .pt--o{background:transparent;box-shadow:inset 0 0 0 2px var(--navy)}
+.log h3{font:700 22px/1.25 var(--sans);letter-spacing:-.01em}
+.log p{margin-top:6px;font-size:16.5px;color:var(--slate)}
+.log p q{color:var(--navy)}
+.log .src{display:block;margin-top:6px;font:400 12.5px/1.4 var(--mono);color:var(--slate)}
+
+/* hodnotenie + kontakt */
+.visit{padding:100px 0 110px}
+.score{display:grid;grid-template-columns:auto auto 1fr;gap:24px 64px;align-items:end;padding-bottom:56px;margin-bottom:64px;border-bottom:1px solid var(--line)}
+.score b{display:block;font:700 clamp(64px,7.4vw,104px)/.9 var(--sans);letter-spacing:-.05em}
+.score b small{font-size:.42em;letter-spacing:-.02em;margin-left:.06em}
+.score span{display:block;margin-top:12px;font:400 13.5px/1.45 var(--mono);color:var(--slate)}
+.score b{color:var(--navy)}
+.score__note{justify-self:end;max-width:24em;color:var(--slate);font-size:16.5px}
+.visit__g{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:start}
+.addr{font:700 clamp(56px,7vw,96px)/.92 var(--sans);letter-spacing:-.05em}
+.addr + p{margin-top:14px;font:400 14px/1.5 var(--mono);color:var(--slate)}
+.lines{margin-top:40px}
+.lines li{display:grid;grid-template-columns:170px 1fr;gap:4px 24px;padding:16px 0;border-top:1px solid var(--line)}
+.lines .tag{color:var(--slate);padding-top:5px}
+.lines a{font:600 20px/1.4 var(--sans);text-decoration:none}
+.lines a:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
+.lines a.mono{font:500 19px/1.4 var(--mono)}
+.lines small{display:block;font-size:15px;color:var(--slate)}
+.week h3{font:700 26px/1.1 var(--sans);letter-spacing:-.02em;margin-bottom:14px}
+.week table{width:100%;border-collapse:collapse;font:400 15.5px/1.3 var(--mono)}
+.week td{padding:13px 10px;border-top:1px solid var(--line)}
+.week td:first-child{font-family:var(--sans);font-size:17px}
+.week td:last-child{text-align:right}
+.week tr[data-today] td{background:var(--navy);color:var(--on)}
+.week tr[data-today] td:first-child::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--red);margin-right:10px;vertical-align:1px}
+.week .off{color:var(--slate)}
+.week tr[data-today] .off{color:var(--on-2)}
+.week__src{margin-top:14px;font-size:15px;color:var(--slate)}
+
+/* footer */
+.foot{background:var(--navy);color:var(--on-2);padding:60px 0 36px;font-size:16px}
+.foot__g{display:grid;grid-template-columns:minmax(0,5fr) repeat(2,minmax(0,3fr));gap:40px}
+.foot .logo{color:var(--on)}
+.foot .logo span{color:var(--on-2)}
+.foot__tag{margin-top:14px;max-width:24em}
+.foot h2{font:500 12.5px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--on);margin-bottom:12px}
+.foot li{padding:3px 0}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline;text-underline-offset:4px}
+.foot__b{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:48px;padding-top:20px;border-top:1px solid var(--line-n);font-size:14.5px}
+
+.dock{display:none}
+
+@media (max-width:1100px){
+  .menu{gap:22px}
+  .hdr{gap:28px}
+  .hdr__tel{display:none}
+  .months{gap:34px 30px}
+  .mo ol{gap:6px}
+}
+@media (max-width:900px){
+  :root{--W:calc(100% - 48px)}
+  .hdr{flex-wrap:wrap;gap:0 20px;min-height:0;padding:16px 0 0}
+  .menu{order:3;width:100%;justify-content:space-between;margin-top:10px;border-top:1px solid var(--line)}
+  .hero{grid-template-columns:1fr;min-height:0;gap:36px;padding:40px 0 56px}
+  .disc{justify-self:start;width:min(100%,360px)}
+  .year__hd,.space__hd,.events__g,.visit__g{grid-template-columns:1fr;gap:28px}
+  .space__src{justify-self:start;text-align:left}
+  .key{justify-content:start}
+  .months{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .modes{grid-template-columns:1fr 1fr}
+  .modes li:nth-child(3){padding-left:0;border-left:0}
+  .modes li:nth-child(n+3){border-top:1px solid var(--line)}
+  .cafe__q{grid-template-columns:1fr;gap:16px}
+  .ph--a{grid-column:1/7;grid-row:2}
+  .ph--b{grid-column:7/13;grid-row:2;align-self:end}
+  .ph--b img{aspect-ratio:4/5}
+  .ph--c{grid-column:1/6;grid-row:3}
+  .menu-todo{grid-column:6/13;grid-row:3}
+  .score{grid-template-columns:auto auto;gap:24px 48px}
+  .score__note{grid-column:1/-1;justify-self:start}
+  .year__ft{grid-template-columns:auto auto}
+  .year__note{grid-column:1/-1;justify-self:start}
+  .foot__g{grid-template-columns:1fr 1fr}
+  .foot__g>div:first-child{grid-column:1/-1}
+}
+@media (max-width:600px){
+  :root{--W:calc(100% - 32px)}
+  body{font-size:17px;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+  .note{font-size:13px}
+  .note span,.m-hide{display:none}
+  .logo b{font-size:27px}
+  .hdr .cta{min-height:44px;padding:0 18px;font-size:15.5px}
+  .menu{font-size:15.5px}
+  .hero h1{font-size:42px;margin:16px 0 18px}
+  .hero__lede{font-size:18px}
+  .now__src{margin-left:0;width:100%}
+  .hero__acts .cta{flex:1 1 100%}
+  .disc{width:min(100%,300px);justify-self:center}
+  .year{padding:64px 0 70px}
+  .year h2{font-size:36px}
+  .key{grid-template-columns:1fr;justify-content:start;gap:9px}
+  .months{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 16px;margin-top:40px}
+  .mo h3{font-size:12px;margin-bottom:10px;padding-bottom:8px}
+  .mo ol{gap:5px}
+  .mo li.today{box-shadow:0 0 0 2px var(--navy),0 0 0 4px var(--red)}
+  .mo li.today::after{font-size:10px;padding:3px 5px;bottom:calc(100% + 6px)}
+  .year__ft{gap:22px 28px;margin-top:40px}
+  .cnt b{font-size:34px}
+  .space{padding:72px 0 64px}
+  .space__hd{margin-bottom:32px}
+  .modes{grid-template-columns:1fr}
+  .modes li,.modes li+li{padding:22px 0 20px;border-left:0}
+  .modes li+li{border-top:1px solid var(--line)}
+  .modes li{display:grid;grid-template-columns:44px 1fr;column-gap:12px}
+  .modes .dot{grid-row:1/3;margin:6px 0 0}
+  .modes p{grid-column:2}
+  .cafe{padding:0 0 76px}
+  .cafe__g{gap:14px}
+  .cafe__q{padding:36px 0 28px}
+  .ph--a{grid-column:1/-1;grid-row:auto}
+  .ph--a img{aspect-ratio:4/4.4}
+  .ph--b{grid-column:1/8;grid-row:auto}
+  .ph--b img{aspect-ratio:1}
+  .ph--c{grid-column:8/13;grid-row:auto;align-self:end}
+  .ph--c img{aspect-ratio:3/4.4}
+  .menu-todo{grid-column:1/-1;grid-row:auto}
+  .events{padding:72px 0 76px}
+  .log li{grid-template-columns:18px 1fr;gap:0 14px}
+  .log time,.log .when{grid-column:2;grid-row:1}
+  .log .pt{grid-row:1/4;grid-column:1;margin-top:4px}
+  .log h3,.log p,.log .src{grid-column:2}
+  .log h3{font-size:20px;margin-top:4px}
+  .visit{padding:72px 0 80px}
+  .score{grid-template-columns:1fr 1fr;gap:20px 24px;padding-bottom:40px;margin-bottom:48px}
+  .score b{font-size:60px}
+  .addr{font-size:58px}
+  .lines li{grid-template-columns:1fr;gap:2px}
+  .foot__g{grid-template-columns:1fr}
+  .dock{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--wall);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+  .dock a{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:999px;font:600 16.5px/1 var(--sans);text-decoration:none}
+  .dock a:first-child{background:var(--red);color:#fff}
+  .dock a:last-child{background:var(--navy);color:var(--on)}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="note" role="note"><div class="wrap"><p><b>Neoficiálny návrh</b> — nie je to oficiálny web podniku <span>· ukážka od webdavid.sk, objednávky ani rezervácie tu nefungujú</span></p></div></div>
+
+<header class="wrap hdr">
+  <a class="logo" href="#" aria-label="365.labb — na začiatok"><b>365<i>.</i>labb</b><span>café · coworking</span></a>
+  <nav class="menu" aria-label="Hlavná navigácia">
+    <a href="#priestor">Priestor</a><a href="#kava">Káva</a><a href="#podujatia">Podujatia</a><a href="#kontakt">Kontakt</a>
+  </nav>
+  <a class="hdr__tel mono" href="tel:+421908565464">0908 565 464</a>
+  <a class="cta cta--navy" href="tel:+421908565464">Zavolať</a>
+</header>
+
+<main>
+  <section class="wrap hero" aria-labelledby="h1">
+    <div>
+      <p class="tag">Lazovná 5 · Banská Bystrica<span class="m-hide"> · kaviareň + coworking</span></p>
+      <h1 id="h1">Káva, pracovný stôl a detská hernička blízko námestia<em>.</em></h1>
+      <p class="hero__lede"><q>365.labb je coworkingové komunitné centrum, ktoré má slúžiť v prospech mesta Banská Bystrica a jeho obyvateľov.</q><small>— úvod FB stránky 365.labb, súčasťou je aj café labb</small></p>
+      <div class="now">
+        <p class="now__main"><span id="statusDot" aria-hidden="true"></span><span id="statusText">Kaviareň: Po – Pi <b>8:30 – 19:30</b></span></p>
+        <p class="now__src">Po – Pi 8:30 – 19:30 · podľa OpenStreetMap</p>
+      </div>
+      <div class="hero__acts">
+        <a class="cta cta--red" href="#rok">Rok v bodkách</a>
+        <a class="cta cta--line" href="https://www.google.com/maps/search/?api=1&amp;query=365.labb%2C%20Lazovn%C3%A1%205%2C%20Bansk%C3%A1%20Bystrica" rel="noopener">Navigovať na Lazovnú 5</a>
+      </div>
+    </div>
+    <figure class="disc">
+      <img src="assets/napis-365-cafe.webp" width="480" height="480" alt="Tmavomodrý priestorový nápis 365.café na svetlej fasáde" fetchpriority="high">
+      <figcaption>365.café je súčasťou 365.labb</figcaption>
+    </figure>
+  </section>
+
+  <section class="year" id="rok" aria-labelledby="rok-h">
+    <div class="wrap">
+      <div class="year__hd">
+        <div>
+          <p class="tag">Rok <span class="js-y">2026</span> v bodkách · 1 bodka = 1 deň</p>
+          <h2 id="rok-h">Dnes je <b class="js-doy">269.</b> deň <span>z <span class="js-len">365</span></span></h2>
+        </div>
+        <ul class="key" aria-label="Legenda">
+          <li><i class="k-open"></i>Po – Pi, už za nami</li>
+          <li><i class="k-today"></i>dnes</li>
+          <li><i class="k-fut"></i>Po – Pi, ešte len príde</li>
+          <li><i class="k-ev"></i>Raňajky podnikavcov 23. 2.</li>
+          <li><i class="k-we"></i>sobota a nedeľa</li>
+        </ul>
+      </div>
+      <div class="months" id="months" role="img" aria-label="Kalendár roka po dňoch, dnešný deň je zvýraznený"></div>
+      <div class="year__ft">
+        <p class="cnt"><b class="js-past">268</b><span>dní za nami</span></p>
+        <p class="cnt"><b class="js-left">97</b><span>dní pred nami</span></p>
+        <p class="year__note">Plné bodky sú dni <b>od pondelka do piatka</b> — vtedy má kaviareň podľa OpenStreetMap otvorené 8:30 – 19:30. Sviatočné hodiny zverejňujú na Facebooku.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap space" id="priestor" aria-labelledby="space-h">
+    <div class="space__hd">
+      <div>
+        <p class="tag">Jeden dom na Lazovnej</p>
+        <h2 id="space-h">Kaviareň, pracovňa aj herňa v jednom</h2>
+      </div>
+      <p class="space__src">Štyri vety, jeden zdroj: úvod FB stránky kaviarne 365.café_LABB.</p>
+    </div>
+    <ul class="modes">
+      <li><span class="dot" style="--s:30px" aria-hidden="true"></span><h3>Kaviareň</h3><p><q>Príjemná kaviareň blízko námestia v pokojnom prostredí.</q></p></li>
+      <li><span class="dot" style="--s:24px" aria-hidden="true"></span><h3>Coworking</h3><p><q>Možnosť pracovať na počítači</q> v coworkingovom komunitnom centre 365.labb.</p></li>
+      <li><span class="dot" style="--s:18px" aria-hidden="true"></span><h3>Detská hernička</h3><p><q>K dispozícii detská hernička</q> — pre najmenších návštevníkov kaviarne.</p></li>
+      <li><span class="dot" style="--s:12px" aria-hidden="true"></span><h3>Oslavy a podujatia</h3><p><q>Miesto vhodné na oslavy a rôzne podujatia.</q></p></li>
+    </ul>
+  </section>
+
+  <section class="wrap cafe" id="kava" aria-labelledby="cafe-h">
+    <div class="cafe__g">
+      <div class="cafe__q">
+        <div>
+          <span class="tag">Káva · koláče · pauza</span>
+          <blockquote id="cafe-h"><q>Nikdy neodmietni coffee break</q></blockquote>
+        </div>
+        <p>Príspevok 365.labb na Facebooku, 16. 9. 2026</p>
+      </div>
+      <figure class="ph ph--a"><div class="fr"><img src="assets/babovka-espresso.webp" width="860" height="1147" alt="Bábovka s čokoládovou polevou a pistáciami a espresso na teraco stole, v pozadí sedačky a rastliny" loading="lazy"></div><figcaption>espresso a bábovka na teraco stole</figcaption></figure>
+      <figure class="ph ph--b"><div class="fr"><img src="assets/latte-art.webp" width="1000" height="743" alt="Barista nalieva mlieko do červenej šálky a kreslí latte art" loading="lazy"></div><figcaption>latte art v červenej šálke</figcaption></figure>
+      <figure class="ph ph--c"><div class="fr"><img src="assets/chia-puding.webp" width="760" height="899" alt="Chia puding s jogurtom a lesným ovocím v priehľadnom pohári" loading="lazy"></div><figcaption>chia puding s ovocím</figcaption></figure>
+      <aside class="menu-todo" aria-labelledby="todo-h">
+        <p class="tag">Ukážka návrhu</p>
+        <h3 id="todo-h">Tu bude aktuálny lístok kaviarne</h3>
+        <p>Káva, dezerty a ceny. Web 365labb.sk momentálne nefunguje, lístok online nie je.</p>
+        <ul aria-hidden="true"><li>káva<i></i>—</li><li>limonáda<i></i>—</li><li>sladký dezert<i></i>—</li></ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="events" id="podujatia" aria-labelledby="ev-h">
+    <div class="wrap events__g">
+      <div>
+        <p class="tag">Počas roka</p>
+        <h2 id="ev-h">Raňajky podnikavcov, výstavy aj swapy</h2>
+        <p class="events__lede">Čo sa na Lazovnej 5 deje popri káve — podľa verejných zdrojov. Aktuálne termíny zverejňuje 365.labb na Facebooku.</p>
+        <a class="cta cta--navy" href="https://www.facebook.com/365.labb/" rel="noopener">Aktuálny program na Facebooku</a>
+      </div>
+      <ol class="log">
+        <li><time class="mono" datetime="2026-02-23T08:30">23. 2. 2026 · 8:30</time><span class="pt pt--ev" aria-hidden="true"></span><div><h3>Raňajky podnikavcov</h3><p><q>Neformálne dopoludňajšie stretnutie spojené s občerstvením a networkingom.</q> Ďalšie stretnutie zo série, vstup 10 € s občerstvením.</p><span class="src">zdroj: bbonline.sk</span></div></li>
+        <li><span class="when">počas roka</span><span class="pt" aria-hidden="true"></span><div><h3>Workshopy a meetingy</h3><p><q>Počas roka sa tu organizuje aj niekoľko workshopov a meetingov.</q></p><span class="src">zdroj: centralslovakia.eu</span></div></li>
+        <li><span class="when">počas roka</span><span class="pt" aria-hidden="true"></span><div><h3>Výstavy obrazov a swapy oblečenia</h3><p><q>Medzi obľúbené podujatia patria výstavy obrazov a swapy oblečenia.</q></p><span class="src">zdroj: centralslovakia.eu</span></div></li>
+        <li><span class="when">podľa programu</span><span class="pt" aria-hidden="true"></span><div><h3>Maľovanie s Arttime</h3><p>Arttime uvádza Kaviareň 365.labb medzi miestami svojich maľovacích kurzov.</p><span class="src">zdroj: arttime.sk</span></div></li>
+        <li><span class="when">na dohodu</span><span class="pt pt--o" aria-hidden="true"></span><div><h3>Vaša oslava</h3><p>Kaviareň je podľa vlastných slov <q>miesto vhodné na oslavy a rôzne podujatia</q>. Termín a podmienky dohodnete telefonicky.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap visit" id="kontakt" aria-labelledby="visit-h">
+    <div class="score">
+      <p><b class="mono">100<small>%</small></b><span>odporúča 365.labb na Facebooku<br>5 hodnotení</span></p>
+      <p><b class="mono">3,2<small>tis.</small></b><span>sledovateľov profilu 365.labb<br>na Facebooku</span></p>
+      <p class="score__note">Starší profil kaviarne sa uzatvára: <q>…všetky novinky… nájdete už iba na našom profile 365.labb, ktorého súčasťou je aj café labb…</q></p>
+    </div>
+    <div class="visit__g">
+      <div>
+        <h2 class="addr" id="visit-h">Lazovná 5</h2>
+        <p>974 01 Banská Bystrica · blízko námestia</p>
+        <ul class="lines">
+          <li><span class="tag">365.labb</span><div><a class="mono" href="tel:+421908565464">0908 565 464</a><small>coworking a komunitné centrum (FB 365.labb)</small></div></li>
+          <li><span class="tag">365.café</span><div><a class="mono" href="tel:+421905271073">0905 271 073</a><small>kaviareň (FB stránka 365.café_LABB)</small></div></li>
+          <li><span class="tag">E-mail</span><div><a href="mailto:365labb@gmail.com">365labb@gmail.com</a></div></li>
+          <li><span class="tag">Mapa</span><div><a href="https://www.google.com/maps/search/?api=1&amp;query=365.labb%2C%20Lazovn%C3%A1%205%2C%20Bansk%C3%A1%20Bystrica" rel="noopener">Lazovná 5 v Google Maps</a></div></li>
+          <li><span class="tag">Online</span><div><a href="https://www.facebook.com/365.labb/" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/365.labb/" rel="noopener">Instagram</a></div></li>
+        </ul>
+      </div>
+      <div class="week">
+        <h3>Otváracie hodiny kaviarne</h3>
+        <table>
+          <tr data-day="1"><td>Pondelok</td><td>8:30 – 19:30</td></tr>
+          <tr data-day="2"><td>Utorok</td><td>8:30 – 19:30</td></tr>
+          <tr data-day="3"><td>Streda</td><td>8:30 – 19:30</td></tr>
+          <tr data-day="4"><td>Štvrtok</td><td>8:30 – 19:30</td></tr>
+          <tr data-day="5"><td>Piatok</td><td>8:30 – 19:30</td></tr>
+          <tr data-day="6"><td>Sobota</td><td class="off">zatvorené</td></tr>
+          <tr data-day="0"><td>Nedeľa</td><td class="off">zatvorené</td></tr>
+        </table>
+        <p class="week__src">Podľa OpenStreetMap. Počas sviatkov mávajú upravené hodiny — pred návštevou overte na Facebooku.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__g">
+      <div>
+        <a class="logo" href="#"><b>365<i>.</i>labb</b><span>café · coworking</span></a>
+        <p class="foot__tag">Coworkingové komunitné centrum a kaviareň na Lazovnej 5 v Banskej Bystrici.</p>
+      </div>
+      <div><h2>Stránka</h2><ul><li><a href="#rok">Rok v bodkách</a></li><li><a href="#priestor">Priestor</a></li><li><a href="#podujatia">Podujatia</a></li></ul></div>
+      <div><h2>Kontakt</h2><ul class="mono"><li><a href="tel:+421908565464">0908 565 464</a></li><li><a href="tel:+421905271073">0905 271 073</a></li><li><a href="mailto:365labb@gmail.com">365labb@gmail.com</a></li></ul></div>
+    </div>
+    <div class="foot__b"><p>Neoficiálny návrh webu · webdavid.sk · 2026</p><p>Nie je to oficiálny web 365.labb ani 365.café.</p></div>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Rýchle akcie"><a href="tel:+421908565464">Zavolať</a><a href="https://www.google.com/maps/search/?api=1&amp;query=365.labb%2C%20Lazovn%C3%A1%205%2C%20Bansk%C3%A1%20Bystrica" rel="noopener">Navigovať</a></nav>
+
+<script>
+(function(){
+  "use strict";
+  var HOURS = {1:[[510,1170]],2:[[510,1170]],3:[[510,1170]],4:[[510,1170]],5:[[510,1170]]};
+  var NOTES = {};
+  var W = {open:"Kaviareň je otvorená", closing:"Kaviareň zatvára o", closed:"Kaviareň je zatvorená", next:"otvárame"};
+
+  var ACC = ["v nedeľu","v pondelok","v utorok","v stredu","vo štvrtok","v piatok","v sobotu"];
+  function now(){
+    try{
+      var p = new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Bratislava",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());
+      var m = {}; p.forEach(function(x){ m[x.type] = x.value; });
+      return { day:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[m.weekday], mins:(parseInt(m.hour,10)%24)*60 + parseInt(m.minute,10) };
+    }catch(err){ var d = new Date(); return { day:d.getDay(), mins:d.getHours()*60 + d.getMinutes() }; }
+  }
+  function hm(t){ if(t >= 1440) return "polnoci"; var h = Math.floor(t/60), m = t%60; return h + ":" + (m<10?"0":"") + m; }
+  function status(n){
+    var spans = HOURS[n.day] || [], prev = HOURS[(n.day+6)%7] || [];
+    for(var j=0;j<prev.length;j++){ if(prev[j][1] > 1440 && n.mins < prev[j][1]-1440) return {open:true, end:prev[j][1]-1440}; }
+    for(var i=0;i<spans.length;i++){ if(n.mins >= spans[i][0] && n.mins < spans[i][1]) return {open:true, end:spans[i][1]}; }
+    for(var k=0;k<spans.length;k++){ if(spans[k][0] > n.mins) return {open:false, when:"dnes o " + hm(spans[k][0])}; }
+    for(var d=1; d<=7; d++){ var dd = (n.day+d)%7, s = HOURS[dd]; if(s && s.length) return {open:false, when:(d===1 ? "zajtra" : ACC[dd]) + " o " + hm(s[0][0])}; }
+    return {open:false, when:""};
+  }
+  function render(){
+    var n = now(), dot = document.getElementById("statusDot"), text = document.getElementById("statusText");
+    if(HOURS && dot && text){
+      var st = status(n);
+      if(st.open){
+        var left = st.end - n.mins;
+        if(left <= 60){ dot.className = "is-closing"; text.innerHTML = W.closing + " " + hm(st.end) + " · <b>ešte " + left + " min</b>"; }
+        else { dot.className = "is-open"; text.innerHTML = W.open + " · <b>do " + hm(st.end) + "</b>"; }
+      }else{
+        var note = NOTES[n.day], noted = note && !(HOURS[n.day]||[]).length;
+        dot.className = noted ? "is-note" : "is-closed";
+        text.innerHTML = noted ? "Dnes " + note : W.closed + (st.when ? " · <b>" + W.next + " " + st.when + "</b>" : "");
+      }
+    }
+    var label = document.getElementById("todayLabel");
+    if(HOURS && label && !label.textContent){
+      var s = HOURS[n.day] || [];
+      if(s.length) label.textContent = "Dnes " + s.map(function(x){ return hm(x[0]) + "–" + (x[1] >= 1440 ? "0:00" : hm(x[1])); }).join(", ");
+      else if(!NOTES[n.day]) label.textContent = "Dnes zatvorené";
+    }
+    [].forEach.call(document.querySelectorAll('[data-day="' + n.day + '"]'), function(r){ r.setAttribute("data-today",""); });
+  }
+  render(); setInterval(render, 60000);
+
+  /* Rok v bodkách: jedna bodka = jeden deň, dnešok podľa času v Bratislave. Vyznačené je len overené podujatie. */
+  var EVENTS = {"2026-02-23":"Raňajky podnikavcov"};
+  var MES = ["Január","Február","Marec","Apríl","Máj","Jún","Júl","August","September","Október","November","December"];
+  var DNI = ["ne","po","ut","st","št","pi","so"];
+  function today(){
+    try{
+      var p = new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Bratislava",year:"numeric",month:"numeric",day:"numeric"}).formatToParts(new Date());
+      var m = {}; p.forEach(function(x){ m[x.type] = x.value; });
+      return {y:+m.year, m:+m.month - 1, d:+m.day};
+    }catch(err){ var d = new Date(); return {y:d.getFullYear(), m:d.getMonth(), d:d.getDate()}; }
+  }
+  var t = today(), box = document.getElementById("months");
+  if(box){
+    var html = "", doy = 0, len = 0, idx = 0;
+    for(var mo=0; mo<12; mo++){
+      var days = new Date(Date.UTC(t.y, mo+1, 0)).getUTCDate();
+      var first = (new Date(Date.UTC(t.y, mo, 1)).getUTCDay() + 6) % 7;
+      html += '<div class="mo"><h3>' + MES[mo] + '</h3><ol aria-hidden="true">';
+      for(var d=1; d<=days; d++){
+        idx++;
+        var wd = new Date(Date.UTC(t.y, mo, d)).getUTCDay();
+        var key = t.y + "-" + (mo<9?"0":"") + (mo+1) + "-" + (d<10?"0":"") + d;
+        var cls = [];
+        if(wd === 0 || wd === 6) cls.push("we");
+        var isToday = (mo === t.m && d === t.d);
+        if(mo < t.m || (mo === t.m && d < t.d)) cls.push("past");
+        if(isToday){ cls.push("today"); doy = idx; }
+        if(EVENTS[key]) cls.push("ev");
+        var tip = DNI[wd] + " " + d + ". " + (mo+1) + "." + (EVENTS[key] ? " · " + EVENTS[key] : "") + (isToday ? " · dnes" : "");
+        html += '<li' + (cls.length ? ' class="' + cls.join(" ") + '"' : '') + (d === 1 && first ? ' style="grid-column-start:' + (first+1) + '"' : '') + ' title="' + tip + '"></li>';
+      }
+      html += '</ol></div>';
+    }
+    len = idx;
+    box.innerHTML = html;
+    function put(sel, v){ [].forEach.call(document.querySelectorAll(sel), function(e){ e.textContent = v; }); }
+    put(".js-y", t.y); put(".js-doy", doy + "."); put(".js-len", len);
+    put(".js-past", doy - 1); put(".js-left", len - doy);
+  }
+})();
+</script>
